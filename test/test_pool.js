@@ -22,13 +22,19 @@ test('Test pool', function (t) {
     t.test('connection', function (t) {
         setup(function () {
             var pool = new Pool({
-                port: server.address().port
+                port: server.address().port,
+                max: 1
             });
-
+            //first connection
             pool.acquire(function (error, connection) {
                 t.ok(!error, 'no error.');
-                
-                teardown(t.end);
+                //Second connection
+                pool.acquire(function (error, connection) {
+                    t.ok(!error, 'no error.');
+
+                    teardown(t.end);
+                });
+
             });
         });
     });

@@ -20,9 +20,9 @@ function MyPool (options) {
             var valid = connection && connection._socket && !connection._socket.destroyed;
             return valid;
         },
-        max      : 5,
-        min      : 0,
-        idleTimeoutMillis : 5000
+        max      : options.max || 5,
+        min      : options.min || 0,
+        idleTimeoutMillis : options.idleTimeoutMillis  || 5000
     });
 }
 
