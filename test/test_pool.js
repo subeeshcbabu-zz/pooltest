@@ -4,7 +4,7 @@ var test = require('tape');
 var mockserver = require('./fixture/mockserver');
 var fs = require('fs');
 var path = require('path');
-var Pool = require('../index');
+var Pool = require('../index').MyPool;
 
 test('Test pool', function (t) {
     var server;
@@ -27,7 +27,7 @@ test('Test pool', function (t) {
 
             pool.acquire(function (error, connection) {
                 t.ok(!error, 'no error.');
-                connection.close();
+                
                 teardown(t.end);
             });
         });

@@ -1,7 +1,8 @@
 'use strict';
 var Connection = require('./connection');
+var Pool = require('generic-pool').Pool;
 
-function Pool (options) {
+function MyPool (options) {
     var self = this;
 
     options = options || {};
@@ -25,7 +26,7 @@ function Pool (options) {
     });
 }
 
-Pool.prototype.acquire = function(callback) {
+MyPool.prototype.acquire = function(callback) {
 
     this._pool.acquire(function (error, connection) {
         if (error) {
@@ -35,4 +36,4 @@ Pool.prototype.acquire = function(callback) {
         callback(null, connection);
     });
 }
-module.exports.Pool = Pool;
+module.exports.MyPool = MyPool;
