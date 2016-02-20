@@ -1,0 +1,28 @@
+{
+  "name": "pooltest",
+  "version": "1.0.0",
+  "description": "A module to test generic-pool use cases",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subeeshcbabu/pooltest.git"
+  },
+  "keywords": [
+    "generic-pool"
+  ],
+  "author": "subeesh chothendavida",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/subeeshcbabu/pooltest/issues"
+  },
+  "homepage": "https://github.com/subeeshcbabu/pooltest#readme",
+  "dependencies": {
+    "generic-pool": "^2.4.0"
+  },
+  "devDependencies": {
+    "tape": "^4.4.0"
+  }
+}
